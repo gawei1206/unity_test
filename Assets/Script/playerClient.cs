@@ -14,13 +14,14 @@ public class playerClient : MonoBehaviour
     string recvString;
     string sendString;
     byte[] recvData = new byte[1024];
-    byte[] sendDate = new byte[1024];
+    byte[] sendData = new byte[1024];
     int recvLen;
     Thread connectThread;
     // Start is called before the first frame update
     void Start()
     {
-        InitSocket();
+        Debug.Log("hello world!");
+        //initSocket();
     }
 
     // Update is called once per frame
@@ -33,16 +34,17 @@ public class playerClient : MonoBehaviour
     {
         try
         {
-            #server_ip_port
+            //server_ip_port
             ip = IPAddress.Parse("127.0.0.1");
             ipEnd = new IPEndPoint(ip, 4567);
             SocketConnect();
             SocketSend("player");
-        } catch (Exception e)
+        } 
+        catch (System.Net.Sockets.SocketException ex)
         {
-            Debug.Log(e);
+            Debug.Log(ex);
         }
-        
+
     }
 
     void SocketConnect()
