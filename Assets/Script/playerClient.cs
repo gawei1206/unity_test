@@ -21,7 +21,7 @@ public class playerClient : MonoBehaviour
     void Start()
     {
         Debug.Log("hello world!");
-        //initSocket();
+        initSocket();
     }
 
     // Update is called once per frame
@@ -36,9 +36,9 @@ public class playerClient : MonoBehaviour
         {
             //server_ip_port
             ip = IPAddress.Parse("127.0.0.1");
-            ipEnd = new IPEndPoint(ip, 4567);
+            ipEnd = new IPEndPoint(ip, 1278);
             SocketConnect();
-            SocketSend("player");
+            SocketSend("{'component': 'player'}");
         } 
         catch (System.Net.Sockets.SocketException ex)
         {
