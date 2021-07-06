@@ -38,7 +38,7 @@ public class playerClient : MonoBehaviour
             ip = IPAddress.Parse("127.0.0.1");
             ipEnd = new IPEndPoint(ip, 1278);
             SocketConnect();
-            SocketSend("{'component': 'player'}");
+            SocketSend("{'component': 'player'}\n");
         } 
         catch (System.Net.Sockets.SocketException ex)
         {
